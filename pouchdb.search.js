@@ -137,7 +137,8 @@ function httpQuery(db, name, opts) {
   var parts = name.split('/');
   return db.request({
     method: 'GET',
-    url: '_design/' + parts[0] + '/_search/' + parts[1] + params
+    url: '_design/' + parts[0] + '/_search/' + parts[1] + params,
+    timeout: 20000
   });
 }
 
